@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="webkid react starterkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vladislav</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid main-page">
+      <!-- Main section-->
+      <main class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+          <nav class="header-top">
+            <div class="row">
+              <div class="col-xs-5">
+                <a href="http://www.vladislav.ua/">
+                  <img src="./images/header-logo.png" alt="header-logo">
+                </a>
+              </div>
+              <div class="col-xs-7 text-right">
+                <div class="user-data data-txt">
+                  <p class="user-name">WorkRocks, "Euro Gold" г.Днепропетровск (04-0162)</p>
+                  <p class="user-id">Контракт 118</p>
+                </div>
+                <div class="user-data data-btn">
+                  <a class="user-data-btn" href="#">Данные</a>
+                  <div class="user-data-popup hide">
+                    <span class="popup-close-btn">x</span>
+                    <div class="options">
+                      <p class="data-item">Кр. условия: <span>0 у.е.</span><span>&#47;</span><span>0 дн.</span></p>
+                      <p class="data-item">Переплата: <span>0 у.е.</span></p>
+                    </div>
+                    <div class="unit">
+                      <p class="data-item">UNIT-резерв: <span>0</span></p>
+                      <p class="data-item">UNIT-баланс: <span>0</span></p>
+                    </div>
+                    <div class="reserve">
+                      <p class="data-item">Резерв: <span>0 у.е.</span></p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </nav>
+          <nav class="header-navigation">
+            <ul class="navigation-list left">
+              <li><a href="#" class="orders" title="Заказы">Заказы</a></li>
+              <li><a href="#" class="reserve" title="Резерв">Резерв</a></li>
+              <li><a href="#" class="contacts" title="Перейти к списку контрактов, сменить текущий контракт">Контракты</a></li>
+              <li><a href="#" class="gifts" title="Подарки">Подарки</a></li>
+            </ul>
+            <div class="main-search" title="Последние поисковые запросы по товарам">
+              <select id="main-search-input" class="input-field">
+                <option value="markdown">Уценка</option>
+                <option value="sale">Распродажа</option>
+              </select>
+            </div>
+            <div class="vin-search" title="Последние поисковые запросы по VIN">
+              <select id="vin-search-input" class="input-field">
+                <!-- <option value="test1">рыба vin-1</option>
+                <option value="test2">рыба vin-2</option> -->
+              </select>
+            </div>
+            <!-- <form action="#" class="main-search search-form">
+                <input type="text" id="main-search-input" class="input-field" placeholder="Поиск товара" title="Последние поисковые запросы по товарам">
+                <span class="arrow"></span>
+                <span class="magnifier"></span>
+            </form> -->
+            <!-- <form action="#" class="vin-search search-form">
+                <input type="text" id="vin-search-input" class="input-field" placeholder="Поиск по VIN" title="Последние поисковые запросы по VIN">
+                <span class="arrow"></span>
+                <span class="magnifier"></span>
+            </form> -->
+            <span class="magnifier-search-all" title="Все подборы в одном окне"></span>
+            <ul class="navigation-list right">
+              <li><a href="#" class="chart" title="Финансовая информация"></a></li>
+              <li><a href="#" class="phone" title="Контакты"></a></li>
+              <li><a href="#"class="email" title="email"></a></li>
+              <li><a href="#"class="info" title="Информация для клиента"></a></li>
+              <li><a href="#"class="set" title="Настройки"></a></li>
+              <li><a href="#"class="logout" title="Выход"></a></li>
+            </ul>
+          </nav>
+        </header>
+        <!-- Header -->
+        <section id="search-result" class="search-result ">
+          <div class="search-container">
+            <div class="search-header">
+              <button type="button" class="close"><span aria-hidden="true" >&times;</span></button>
+              <div class="search-title">
+                <span class="title">Результат подбора товара по узлу: </span>
+                <span>КОМПЛЕКТ ПОРШНЕВЫХ КОЛЕЦ МОД</span>
+              </div>
+              <div class="search-header-table">
+                <table class="table">
+                  <tr>
+                    <td>
+                      <a href="#" class="compare-btn">Сравнить</a>
+                    </td>
+                    <td></td>
+                    <td class="col-sort-select">
+                      <span>Сортировать</span>
+                      <select name="sort" id="table-sort">
+                        <option disabled selected> </option>
+                        <option value="name">По наименованию</option>
+                        <option value="decs">По убыванию</option>
+                        <option value="asc">По возрастанию</option>
+                      </select>
+                    </td>
+                    <td class="col">
+                      <button type="button" name="button" class="slider-btn left show-retail"></button>
+                      <span class="cost retail">Розн., грн</span>
+                      <span class="cost wholesale hide">Опт., грн</span>
+                      <button type="button" name="button" class="slider-btn right show-wholesale"></button>
+                    </td>
+                    <td class="col">
+                      <span>Единица</span>
+                    </td>
+                    <td class="col">
+                      <span>Количество</span>
+                    </td>
+                    <td class="col">
+                      <span></span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="search-body" id="search-body" data-mcs-theme="inset-dark">
+              <table class="table" id="search-table">
+                <tr class="table-row" id="product-id-1" >
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-1" >
+                    <label for="checkbox-product-id-1"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">Bman c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <a href="">
+                      <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                    </a>
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col-cost" title="522/0,07">
+                    <span class="cost retail">401,22</span>
+                    <span class="cost wholesale hide">201,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class  :  pink or green -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="sub-table-row hide" data="product-id-1">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-1-1" >
+                    <label for="checkbox-product-id-1-1"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">Xann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues fadeIn">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col-cost" title="522/0,07">
+                    <span class="cost retail">130,22</span>
+                    <span class="cost wholesale hide">100,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status green"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="sub-table-row hide" data="product-id-1">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-1-2" >
+                    <label for="checkbox-product-id-1-2"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">Amann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues fadeIn">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col-cost" title="522/0,07">
+                    <span class="cost retail">405</span>
+                    <span class="cost wholesale hide">210</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-2">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-2" >
+                    <label for="checkbox-product-id-2"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">AMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col-cost" title="522/0,07">
+                    <span class="cost retail">301,22</span>
+                    <span class="cost wholesale hide">201,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-3">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-3" >
+                    <label for="checkbox-product-id-3"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">XMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col-cost" title="522/0,07">
+                    <span class="cost retail">501,22</span>
+                    <span class="cost wholesale hide">451,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status yellow"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-4">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-4" >
+                    <label for="checkbox-product-id-4"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">AMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col-cost" title="522/0,07">
+                    <span class="cost retail">301,22</span>
+                    <span class="cost wholesale hide">201,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-5">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-5" >
+                    <label for="checkbox-product-id-5"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">XMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col-cost" title="522/0,07">
+                    <span class="cost retail">501,22</span>
+                    <span class="cost wholesale hide">451,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status yellow"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div><!-- search-container -->
+        </section>
+
+        <section id="order" class="order ">
+          <div class="order-container">
+            <div class="order-header">
+              <div class="header-title row">
+                <div class="col-xs-4">
+                  <ul class="order-list-btn">
+                    <li><a href="#" class="update" title="Обновить цены в заказах"></a></li>
+                    <li><a href="#" class="merge" title="Объединить отмеченные заказы"></a></li>
+                    <li><a href="#" class="money" title="Показать заказ в гривне"></a></li>
+                    <li><a href="#" class="del" title="Удалить"></a></li>
+                  </ul>
+                </div>
+                <div class="col-xs-8">
+                  <p class="order-info">
+                    <span class="title">Заказ № </span>
+                    <span class="data">101_W_162 от 04.08.16 </span>
+                    <span class="title">Статус:</span>
+                    <span class="data">Формируется</span>
+                  </p>
+                  <p class="order-info">
+                    <span class="title">Заказ создал:</span>
+                    <span class="data">Александр</span>
+                  </p>
+                </div>
+              </div>
+              <div class="header-notation">
+                <div class="notation">
+                  <label for="notation-input">Примечание</label>
+                  <input type="text" name="notation-input" id="notation-input" class="notation-input">
+                  <a href="#" class="notation-save-btn" title="Сохранить комментарий"></a>
+                  <a href="#" class="notation-delivery-btn btn" title="Доставка">Доставка</a>
+                  <a href="#" class="notation-change-btn btn" title="Сменить контракт">Сменить</a>
+                  <p class="client-info contract">
+                    <span class="title">Контракт №</span>
+                    <span class="data">5972-15</span>
+                  </p>
+                </div>
+                <div class="delivery-details">
+                  <p class="client-info shipment">
+                    <span class="title">Отгрузка:</span>
+                    <span class="data">02.06.2016, 9:00, Доставка по городу</span>
+                  </p>
+                  <p class="client-info delivery">
+                    <span class="title">Доставка:</span>
+                    <span class="data">5972-15</span>
+                  </p>
+                  <p class="client-info plan">
+                    <span class="title">План прибытия:</span>
+                    <span class="data">02.06.2016, 9:00</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-body" id="order-body" >
+              <div class="table-header-wrap">
+                <table class="table table-header" id="order-table-header">
+                  <tr>
+                    <th class="col-checkbox">
+                      <input type="checkbox" class="order-select-all" id="order-select-all" >
+                      <label for="order-select-all" class="order-select-all"></label>
+                    </th>
+                    <th class="col-discription">Наименование</th>
+                    <th></th>
+                    <th class="col">Количество</th>
+                    <th class="col">Единица</th>
+                    <th class="col">Цена</th>
+                    <th class="col">Unit</th>
+                    <th></th>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="order-table-body-wrap" id="order-table-body-wrap" data-mcs-theme="inset-dark">
+                <table class="table table-boby" id="order-table-boby">
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-1" >
+                      <label for="order-product-id-1"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-2" >
+                      <label for="order-product-id-2"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-3" >
+                      <label for="order-product-id-3"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-4" >
+                      <label for="order-product-id-4"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-5" >
+                      <label for="order-product-id-5"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-6" >
+                      <label for="order-product-id-6"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-7" >
+                      <label for="order-product-id-7"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-8" >
+                      <label for="order-product-id-8"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-9" >
+                      <label for="order-product-id-9"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-10" >
+                      <label for="order-product-id-10"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-11" >
+                      <label for="order-product-id-11"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-12" >
+                      <label for="order-product-id-12"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div><!-- order-container -->
+        </section>
+
+        <section id="gift" class="gift hide">
+          <div class="gift-container">
+            <div class="gift-header">
+              <a href="#">стоимотсть</a>
+              <a href="#" class="list-view"></a>
+              <a href="#" class="blocks-view"></a>
+              <a href="#">Доступные товары</a>
+
+            </div>
+
+            <div class="gift-body" id="gift-body" data-mcs-theme="inset-dark">
+              <ul class="items blocks">
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+                <li id="430738" title="Жидкое мыло" class="item" _val="3">
+                  <img class="image" src="./images/gift/430738.jpg">
+                  <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                  <div class="description">
+                    <span class="unit">3 unit</span>
+                    <input warecode_="430738" class="quantity-input" type="text" value="">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="btn-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+           </div> <!-- gift-container -->
+        </section>
+        <!-- footer -->
+        <footer class="main-footer">
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="shipment-wrap">
+                <a href="#" class="shipment btn btn-success">Отгрузка разрешена</a>
+                <p class="exchange-rates">1 y.e = 28,50 грн</p>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="promotion-wrap">
+                <div class="promotion long num-1">
+                  <a href="#" class="long-banner-img">
+                    <img src="./images/footer-img-1.jpg" alt="footer img">
+                    <div class="long-banner-txt">
+                      <p>Длинные названия Товары Motul 76ед.</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="promotion num-2">
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <a href="#">
+                        <img src="./images/footer-img-2.jpg" alt="footer img">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p>Длинные названия Товары Motul 76 ед.</p>
+                      <p>ВЕТА</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="promotion num-3">
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <a href="#">
+                        <img src="./images/footer-img-3.jpg" alt="footer img">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p>Длинные названия Товары Motul 76 ед.</p>
+                      <p>ВЕТА</p>
+                      <p class="unit">160 unit</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- footer -->
+      </main>
+      <!-- Main section-->
+
+
+
+    </div>
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/widgetSearchVinBox.js"></script>
+    <script src="js/widgetSearchBox.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

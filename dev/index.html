@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="webkid react starterkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vladislav</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container-fluid main-page">
+      <!-- Main section-->
+      <main class="main-content">
+        <!-- Header -->
+        <header class="main-header">
+          <nav class="header-top">
+            <div class="row">
+              <div class="col-xs-5">
+                <a href="http://www.vladislav.ua/">
+                  <img src="./images/header-logo.png" alt="header-logo">
+                </a>
+              </div>
+              <div class="col-xs-7 text-right">
+                <div class="user-data data-txt">
+                  <p class="user-name">WorkRocks, "Euro Gold" г.Днепропетровск (04-0162)</p>
+                  <p class="user-id">Контракт 118</p>
+                </div>
+                <div class="user-data data-btn">
+                  <a class="user-data-btn" href="#">Данные</a>
+                  <div class="user-data-popup hide">
+                    <span class="popup-close-btn">x</span>
+                    <div class="options">
+                      <p class="data-item">Кр. условия: <span>0 у.е.</span><span>&#47;</span><span>0 дн.</span></p>
+                      <p class="data-item">Переплата: <span>0 у.е.</span></p>
+                    </div>
+                    <div class="unit">
+                      <p class="data-item">UNIT-резерв: <span>0</span></p>
+                      <p class="data-item">UNIT-баланс: <span>0</span></p>
+                    </div>
+                    <div class="reserve">
+                      <p class="data-item">Резерв: <span>0 у.е.</span></p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </nav>
+          <nav class="header-navigation">
+            <ul class="navigation-list left">
+              <li><a href="#" class="orders" title="Заказы">Заказы</a></li>
+              <li><a href="#" class="reserve" title="Резерв">Резерв</a></li>
+              <li><a href="#" class="contacts" title="Перейти к списку контрактов, сменить текущий контракт">Контракты</a></li>
+              <li><a href="#" class="gifts" title="Подарки">Подарки</a></li>
+            </ul>
+            <div class="main-search" title="Последние поисковые запросы по товарам">
+              <select id="main-search-input" class="input-field">
+                <option value="markdown">Уценка</option>
+                <option value="sale">Распродажа</option>
+              </select>
+            </div>
+            <div class="vin-search" title="Последние поисковые запросы по VIN">
+              <select id="vin-search-input" class="input-field">
+                <!-- <option value="test1">рыба vin-1</option>
+                <option value="test2">рыба vin-2</option> -->
+              </select>
+            </div>
+            <!-- <form action="#" class="main-search search-form">
+                <input type="text" id="main-search-input" class="input-field" placeholder="Поиск товара" title="Последние поисковые запросы по товарам">
+                <span class="arrow"></span>
+                <span class="magnifier"></span>
+            </form> -->
+            <!-- <form action="#" class="vin-search search-form">
+                <input type="text" id="vin-search-input" class="input-field" placeholder="Поиск по VIN" title="Последние поисковые запросы по VIN">
+                <span class="arrow"></span>
+                <span class="magnifier"></span>
+            </form> -->
+            <span class="magnifier-search-all" title="Все подборы в одном окне"></span>
+            <ul class="navigation-list right">
+              <li><a href="#" class="chart" title="Финансовая информация"></a></li>
+              <li><a href="#" class="phone" title="Контакты"></a></li>
+              <li><a href="#"class="email" title="email"></a></li>
+              <li><a href="#"class="info" title="Информация для клиента"></a></li>
+              <li><a href="#"class="set" title="Настройки"></a></li>
+              <li><a href="#"class="logout" title="Выход"></a></li>
+            </ul>
+          </nav>
+        </header>
+        <!-- Header -->
+
+        <section id="popup-search-tree" class="popup-search-tree popup-box hide">
+          <div class="search-tree-container">
+              <div class="search-tree-header">
+                <h3 class="title">Подбор запчастей</h3>
+                <button type="button" class="close"><span aria-hidden="true" >&times;</span></button>
+              </div>
+              <div class="search-tree-body" id="search-tree-body" >
+                <div id="search-tree-tabs" class="search-tree-tabs">
+                  <ul class="search-tree-tabs-header">
+                    <li><a href="#tabs-1" title="Подбор по оригинальным программам">Оригинальные каталоги</a></li>
+                    <li><a href="#tabs-2" title="Подбор по модели автомобиля">Авто</a></li>
+                    <li><a href="#tabs-3" title="Подбор по двигателю автомобиля">Двигатель</a></li>
+                    <li><a href="#tabs-4" title="Подбор по модели мотоцикла">Мото</a></li>
+                    <li><a href="#tabs-5" title="Подбор по параметрам" class="sup-new">По параметрам</a></li>
+                  </ul>
+                  <div id="tabs-1" data-mcs-theme="inset-dark">
+                    <nav class="header-link">
+                      <a href="#" class="back-btn"></a>
+                      <span class="prod-logo"></span>
+                      <a href="#" class="start-btn">Начало</a>
+                    </nav>
+                    <div class="search-input">
+                      <input type="text">
+                      <span class="search-btn btn">Поиск</span>
+                    </div>
+                    <div class="tree-view">
+                      <ul>
+                        <li class="sub-list ">
+                          <h3>Легковые автомобили</h3>
+                          <ul>
+                            <li class="sub-list ">
+                              <h3>Кузов</h3>
+                              <ul>
+                                <li class="sub-list closed">
+                                  <h3>Автомобиль, передняя часть</h3>
+                                  <ul>
+                                    <li>
+                                      <h3>Капот двигателя/составляющие/изоляция</h3>
+                                      <a href="#" class="install"></a>
+                                    </li>
+                                    <li class="sub-list closed">
+                                      <h3>Основная фара / комплектующие</h3>
+                                      <ul>
+                                        <li>
+                                          <h3>Основная фара / вставка</h3>
+                                          <a href="#" class="install"></a>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                    <li class="sub-list closed">
+                                      <h3>Детали крепления</h3>
+                                      <ul>
+                                        <li>
+                                          <h3>Облицовка / решетка</h3>
+                                          <a href="#" class="install"></a>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li class="sub-list closed">
+                                  <h3>Кабина пассажира</h3>
+                                </li>
+                                <li class="sub-list closed">
+                                  <h3>Автомобиль, задняя часть</h3>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="sub-list closed">
+                              <h3>Двигатель</h3>
+                              <ul>
+                                <li class="sub-list closed">
+                                  <h3>Головка цилиндра</h3>
+                                  <ul>
+                                    <li>
+                                      <h3 class="green">Крышка головки цилиндра / прокладка</h3>
+                                    </li>
+                                    <li>
+                                      <h3>Направляющая клапана / прокладка / регулировка</h3>
+                                    </li>
+                                    <li>
+                                      <h3>Сальник вала</h3>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <h3>Система подачи воздуха</h3>
+                                </li>
+                                <li>
+                                  <h3>Механизм газораспределения</h3>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="sub-list closed">
+                              <h3>Фильтр</h3>
+                            </li>
+                            <li class="sub-list closed">
+                              <h3>Ременный привод</h3>
+                            </li>
+                            <li class="sub-list closed">
+                              <h3>Система подачи топлива</h3>
+                            </li>
+                            <li class="sub-list closed">
+                              <h3>Подготовка топливной смеси</h3>
+                            </li>
+                            <li class="sub-list closed">
+                              <h3>Система выпуска</h3>
+                            </li>
+                            <li class="sub-list closed">
+                              <h3>Система охлаждения</h3>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+
+                  </div>
+                  <div id="tabs-2">
+                    <p><strong>Подбор по модели автомобиля</strong></p>
+                  </div>
+                  <div id="tabs-3">
+                    <p><strong>Подбор по двигателю автомобиля</strong></p>
+                  </div>
+                  <div id="tabs-4">
+                    <p><strong>Подбор по модели мотоцикла</strong></p>
+                  </div>
+                  <div id="tabs-5">
+                    <p><strong>Подбор по параметрам</strong></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </section>
+
+        <section id="popup-calendar" class="popup-calendar popup-box">
+          <div class="popup-calendar-container">
+              <div class="popup-calendar-header">
+                <h3 class="title">Фильтр заказов</h3>
+                <button type="button" class="close"><span aria-hidden="true" >&times;</span></button>
+              </div>
+              <div class="popup-calendar-body" id="popup-calendar-body" >
+                <h3 class="title">Показать заказы со статусами:</h3>
+                <div class="col">
+                  <div class="checkbox-wrap">
+                    <input type="checkbox" id="popup-calendar-id-1" >
+                    <label for="popup-calendar-id-1"></label>
+                    <span>Формируется</span>
+                  </div>
+                  <div class="checkbox-wrap">
+                    <input type="checkbox" id="popup-calendar-id-2" >
+                    <label for="popup-calendar-id-2"></label>
+                    <span>На обработке</span>
+                  </div>
+                  <div class="checkbox-wrap">
+                    <input type="checkbox" id="popup-calendar-id-3" >
+                    <label for="popup-calendar-id-3"></label>
+                    <span>Принят</span>
+                  </div>
+                </div>
+                <div class=" col">
+                  <div class="checkbox-wrap">
+                    <input type="checkbox" id="popup-calendar-id-4" >
+                    <label for="popup-calendar-id-4"></label>
+                    <span>Закрыт</span>
+                  </div>
+                  <div class="checkbox-wrap">
+                    <input type="checkbox" id="popup-calendar-id-5"  name="start">
+                    <label for="popup-calendar-id-5"></label>
+                    <span>Аннулирован</span>
+                  </div>
+                  <div class="checkbox-wrap">
+                    <input type="checkbox" id="popup-calendar-id-6" name="end">
+                    <label for="popup-calendar-id-6"></label>
+                    <span>Все</span>
+                  </div>
+                </div>
+                <span>За период:</span>
+                <div>
+                  <div class="input-group date" id="popup-datepicker-from">
+                    <span class="input-group-addon txt" id="basic-addon1">c</span>
+                    <input type="text" class="form-control"><span class="input-group-addon input-img"></span>
+                  </div>
+                  <div class="input-group date" id="popup-datepicker-to">
+                    <span class="input-group-addon txt" id="basic-addon1">по</span>
+                    <input type="text" class="form-control"><span class="input-group-addon input-img"></span>
+                  </div>
+                </div>
+                <div class="text-right">
+                    <a href="#" class="apply-btn btn">Применить</a>
+                </div>
+              </div>
+          </div>
+        </section>
+
+        <section id="search-result" class="search-result hide">
+          <div class="search-container">
+            <div class="search-header">
+              <button type="button" class="close"><span aria-hidden="true" >&times;</span></button>
+              <div class="search-title">
+                <span class="title">Результат подбора товара по узлу: </span>
+                <span>КОМПЛЕКТ ПОРШНЕВЫХ КОЛЕЦ МОД</span>
+              </div>
+              <div class="search-header-table">
+                <table class="table">
+                  <tr>
+                    <td>
+                      <a href="#" class="compare-btn">Сравнить</a>
+                    </td>
+                    <td class="col before-sort-select">Сортировать</td>
+                    <td class="col sort-select">
+                      <select name="sort" id="table-sort">
+                        <option disabled selected> </option>
+                        <option value="name">По наименованию</option>
+                        <option value="decs">По убыванию</option>
+                        <option value="asc">По возрастанию</option>
+                      </select>
+                    </td>
+                    <td class="col">
+                      <button type="button" name="button" class="slider-btn left show-retail"></button>
+                      <span class="cost retail">Розн., грн</span>
+                      <span class="cost wholesale hide">Опт., грн</span>
+                      <button type="button" name="button" class="slider-btn right show-wholesale"></button>
+                    </td>
+                    <td class="col">
+                      <span>Единица</span>
+                    </td>
+                    <td class="col">
+                      <span>Количество</span>
+                    </td>
+                    <td class="col"></td>
+                    <td class="col"></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="search-body" id="search-body" data-mcs-theme="inset-dark">
+              <table class="table" id="search-table">
+                <tr class="table-row" id="product-id-1" >
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-1" >
+                    <label for="checkbox-product-id-1"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">Bman c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <a href="">
+                      <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                    </a>
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col col-cost" title="522/0,07">
+                    <span class="cost retail">401,22</span>
+                    <span class="cost wholesale hide">201,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class  :  pink or green -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="sub-table-row hide" data="product-id-1">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-1-1" >
+                    <label for="checkbox-product-id-1-1"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">Xann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues fadeIn">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col col-cost" title="522/0,07">
+                    <span class="cost retail">130,22</span>
+                    <span class="cost wholesale hide">100,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status green"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="sub-table-row hide" data="product-id-1">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-1-2" >
+                    <label for="checkbox-product-id-1-2"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">Amann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues fadeIn">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col col-cost" title="522/0,07">
+                    <span class="cost retail">405</span>
+                    <span class="cost wholesale hide">210</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-2">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-2" >
+                    <label for="checkbox-product-id-2"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">AMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col col-cost" title="522/0,07">
+                    <span class="cost retail">301,22</span>
+                    <span class="cost wholesale hide">201,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-3">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-3" >
+                    <label for="checkbox-product-id-3"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">XMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col col-cost" title="522/0,07">
+                    <span class="cost retail">501,22</span>
+                    <span class="cost wholesale hide">451,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status yellow"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-4">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-4" >
+                    <label for="checkbox-product-id-4"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">AMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col col-cost" title="522/0,07">
+                    <span class="cost retail">301,22</span>
+                    <span class="cost wholesale hide">201,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status red"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="table-row" id="product-id-5">
+                  <td class="col-checkbox">
+                    <input type="checkbox" class="search-checkbox" id="checkbox-product-id-5" >
+                    <label for="checkbox-product-id-5"></label>
+                  </td>
+                  <td class="col-discription">
+                    <a href="#" class="name">
+                      <span class="title">XMann c 1589/3 = c 1595</span>
+                      <span class="status stock">Акция</span>
+                    </a>
+                    <p class="discription">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                  </td>
+                  <td class="col-companis-logo">
+                    <img src="./images/companis-logo/mann.jpg" class="companis-logo" alt="companis logo img">
+                  </td>
+                  <td class="col-analogues">
+                    <span class="analogues">a</span>
+
+                  </td>
+                  <td class="col-type">
+                    <span class="type-auto"></span>
+                  </td>
+                  <td class="col-type">
+                    <span class="type-moto"></span>
+                  </td>
+                  <td class="col col-cost" title="522/0,07">
+                    <span class="cost retail">501,22</span>
+                    <span class="cost wholesale hide">451,22</span>
+                  </td>
+                  <td class="col with-border">
+                    <span class="quantity-type">шт.</span>
+                  </td>
+                  <td class="col with-border">
+                    <!-- border color change class   -->
+                    <span class="quantity-input green">
+                      <input type="text" >
+                    </span>
+                  </td>
+                  <td class="col to-order">
+                    <a href="" class="btn">
+                      <!-- border color change class : red , green , yellow -->
+                      <span class="product-status yellow"></span>
+                      <span>Заказать</span>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div><!-- search-container -->
+        </section>
+        <!-- add class unit in page gift -->
+        <section id="order" class="order unit ">
+          <div class="order-container">
+            <div class="order-header">
+              <div class="header-title row">
+                <div class="col-xs-5">
+                  <ul class="order-list-btn">
+                    <li><a href="#" class="update" title="Обновить цены в заказах"></a></li>
+                    <li><a href="#" class="merge" title="Объединить отмеченные заказы"></a></li>
+                    <li><a href="#" class="money" title="Показать заказ в гривне"></a></li>
+                    <li><a href="#" class="del" title="Удалить"></a></li>
+                  </ul>
+                  <a href="#" class="unit-motion btn">Unit - движение</a>
+                </div>
+                <div class="col-xs-7">
+                  <p class="order-info">
+                    <span class="title">Заказ № </span>
+                    <span class="data">101_W_162 от 04.08.16 </span>
+                    <span class="title">Статус:</span>
+                    <span class="data">Формируется</span>
+                  </p>
+                  <p class="order-info">
+                    <span class="title">Заказ создал:</span>
+                    <span class="data">Александр</span>
+                  </p>
+                </div>
+              </div>
+              <div class="header-notation">
+                <div class="notation">
+                  <label for="notation-input">Примечание</label>
+                  <input type="text" name="notation-input" id="notation-input" class="notation-input">
+                  <a href="#" class="notation-save-btn" title="Сохранить комментарий"></a>
+                  <a href="#" class="notation-delivery-btn btn" title="Доставка">Доставка</a>
+                  <a href="#" class="notation-change-btn btn" title="Сменить контракт">Сменить</a>
+                  <p class="client-info contract">
+                    <span class="title">Контракт №</span>
+                    <span class="data">5972-15</span>
+                  </p>
+                </div>
+                <div class="delivery-details">
+                  <p class="client-info shipment">
+                    <span class="title">Отгрузка:</span>
+                    <span class="data">02.06.2016, 9:00, Доставка по городу</span>
+                  </p>
+                  <p class="client-info delivery">
+                    <span class="title">Доставка:</span>
+                    <span class="data">5972-15</span>
+                  </p>
+                  <p class="client-info plan">
+                    <span class="title">План прибытия:</span>
+                    <span class="data">02.06.2016, 9:00</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-body" id="order-body" >
+              <div class="table-header-wrap">
+                <table class="table table-header" id="order-table-header">
+                  <tr>
+                    <th class="col-checkbox">
+                      <input type="checkbox" class="order-select-all" id="order-select-all" >
+                      <label for="order-select-all" class="order-select-all"></label>
+                    </th>
+                    <th class="col-discription">Наименование</th>
+                    <th></th>
+                    <th class="col">Количество</th>
+                    <th class="col">Единица</th>
+                    <th class="col">Цена</th>
+                    <th class="col">Unit</th>
+                    <th></th>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="order-table-body-wrap" id="order-table-body-wrap" data-mcs-theme="inset-dark">
+                <table class="table table-boby" id="order-table-boby">
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-1" >
+                      <label for="order-product-id-1"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-2" >
+                      <label for="order-product-id-2"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-3" >
+                      <label for="order-product-id-3"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-4" >
+                      <label for="order-product-id-4"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-5" >
+                      <label for="order-product-id-5"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-6" >
+                      <label for="order-product-id-6"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-7" >
+                      <label for="order-product-id-7"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-8" >
+                      <label for="order-product-id-8"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-9" >
+                      <label for="order-product-id-9"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-10" >
+                      <label for="order-product-id-10"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-11" >
+                      <label for="order-product-id-11"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-checkbox with-border">
+                      <input type="checkbox" class="search-checkbox" id="order-product-id-12" >
+                      <label for="order-product-id-12"></label>
+                    </td>
+                    <td class="col-discription">
+                      <a href="#" class="name">
+                        <span class="title">Mann c 1589/3 = c 1595</span>
+                      </a>
+                    </td>
+                    <td class="col to-order with-border">
+                      <a href="" class="btn" title="Проверить наличие товара">
+                        <span>Проверить</span>
+                      </a>
+                    </td>
+                    <td class="col with-border">
+                      <!-- border color change class  :  pink or green -->
+                      <span class="quantity-input green">
+                        <input type="text" >
+                      </span>
+                    </td>
+                    <td class="col with-border">
+                      <span class="quantity-type">шт.</span>
+                    </td>
+                    <td class="col cost with-border">
+                      <span>401,22</span>
+                    </td>
+                    <td class="col unit">
+                      <span>0,07</span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div><!-- order-container -->
+        </section>
+
+        <section id="gift" class="gift ">
+          <div class="gift-container">
+            <div class="gift-header">
+              <div class="row-1">
+                  <div class="filter-by-category">
+                    <p class="title closed">Выбор категории</p>
+                    <div class="list-wrap">
+                      <div class="list" id="list-category" data-mcs-theme="inset-dark">
+                          <ul class="main-list">
+                            <li>
+                              <span class="category-name" id="c1">Одежда</span>
+                              <ul class="sub-list">
+                                <li>
+                                  <span class="category-name closed" id="c1-1">Подкатегория</span>
+                                  <ul class="sub-list">
+                                    <li>
+                                      <input type="checkbox" id="c1-1-1" >
+                                      <label for="c1-1-1"></label>
+                                      <span class="txt">Бейсболка</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-1-2" >
+                                      <label for="c1-1-2"></label>
+                                      <span class="txt">Жилет</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-1-3" >
+                                      <label for="c1-1-3"></label>
+                                      <span class="txt">Перчатки</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-1-4" >
+                                      <label for="c1-1-4"></label>
+                                      <span class="txt">Футболка</span>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <span class="category-name " id="c1-2">Размер</span>
+                                  <ul class="sub-list">
+                                    <li>
+                                      <input type="checkbox" id="c1-2-1" >
+                                      <label for="c1-2-1"></label>
+                                      <span class="txt">M (48)</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-2-2" >
+                                      <label for="c1-2-2"></label>
+                                      <span class="txt">L (50)</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-2-3" >
+                                      <label for="c1-2-3"></label>
+                                      <span class="txt">XL (52)</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-2-4" >
+                                      <label for="c1-2-4"></label>
+                                      <span class="txt">XXL (54)</span>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <span class="category-name" id="c1-3" >Сезон</span>
+                                  <ul class="sub-list">
+                                    <li>
+                                      <input type="checkbox" id="c1-3-1" >
+                                      <label for="c1-3-1"></label>
+                                      <span class="txt">Лето</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-3-2" >
+                                      <label for="c1-3-2"></label>
+                                      <span class="txt">Осень/Весна</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c1-3-3" >
+                                      <label for="c1-3-3"></label>
+                                      <span class="txt">Зима</span>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <span class="category-name" id="c2">Техника</span>
+                              <ul class="sub-list">
+                                <li>
+                                  <span class="category-name" id="c2-1">Назначение техн</span>
+                                  <ul class="sub-list">
+                                    <li>
+                                      <input type="checkbox" id="c2-1-1" >
+                                      <label for="c2-1-1"></label>
+                                      <span class="txt">Развлечения</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c2-1-2" >
+                                      <label for="c2-1-2"></label>
+                                      <span class="txt">Техника для авто</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c2-1-3" >
+                                      <label for="c2-1-3"></label>
+                                      <span class="txt">Техника для кухни</span>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <span class="category-name" id="c2-2">Вид техники</span>
+                                  <ul class="sub-list">
+                                    <li>
+                                      <input type="checkbox" id="c2-2-1" >
+                                      <label for="c2-2-1"></label>
+                                      <span class="txt">M (48)</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c2-2-2" >
+                                      <label for="c2-2-2"></label>
+                                      <span class="txt">L (50)</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c2-2-3" >
+                                      <label for="c2-2-3"></label>
+                                      <span class="txt">XL (52)</span>
+                                    </li>
+                                    <li>
+                                      <input type="checkbox" id="c2-2-4" >
+                                      <label for="c2-2-4"></label>
+                                      <span class="txt">XXL (54)</span>
+                                    </li>
+                                  </ul>
+                                </li>
+
+                              </ul>
+                            </li>
+
+                          </ul>
+                          <!-- main-list -->
+                      </div>
+                      <div class="btn-wrap">
+                        <a href="javascript:void(0)" class="clear-btn">Очистить</a>
+                        <a href="javascript:void(0)" class="apply-btn">Применить</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="javascript:void(0)" class="cost-filter asc">
+                    <span>Стоимость</span>
+                    <!--  toTop toBottom-->
+                    <span class="blue-arrow"></span>
+                  </a>
+                  <a href="javascript:void(0)" class="toggle-view blocks-view active"></a>
+                  <a href="javascript:void(0)" class="toggle-view list-view"></a>
+                  <p class="available">
+                    <a href="javascript:void(0)" class="available-gift">Доступные товары</a>
+                  </p>
+                  <div class="cost-slider">
+                    <label for="minCost">от</label>
+                    <input type="text" id="minCost" class="minCost" value="0"/>
+                    <div id="slider"></div>
+                    <label for="maxCost">до</label>
+                    <input type="text" id="maxCost" class="maxCost" value="1000"/>
+                  </div>
+              </div>
+              <div class="row-2">
+                <div class="selected-category">
+                    <a href="javascript:void(0)" class="clear-btn hide">Сбросить</a>
+                </div>
+              </div>
+            </div>   <!-- gift-header -->
+
+            <div class="gift-body" id="gift-body" data-mcs-theme="inset-dark">
+              <div class="gift-items-wrap" id="gift-items-wrap" data-mcs-theme="inset-dark">
+                <ul class="items blocks">
+                  <li id="430738" class="item" _val="3">
+                    <img class="image" src="./images/gift/430738.jpg">
+                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                    <div class="description">
+                      <span class="unit">3 unit</span>
+                      <input warecode_="430738" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status red"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430685" class="item" _val="5">
+                    <img class="image" src="./images/gift/430685.jpg">
+                    <div class="title">САЛФЕТКИ ДЛЯ САЛОНА С ЛОГОТИПОМ MEYLE</div>
+                    <div class="description">
+                      <span class="unit">5 unit</span>
+                      <input warecode_="430685" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status green"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430690" class="item" _val="6">
+                    <img class="image" src="./images/gift/430690.jpg">
+                    <div class="title">БЕЙСБОЛКА С ЛОГОТИПОМ MEYLE</div>
+                    <div class="description">
+                      <span class="unit">6 unit</span>
+                      <input warecode_="430690" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status yellow"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430729" class="item" _val="8">
+                    <img class="image" src="./images/gift/430729.jpg">
+                    <div class="title">ТЕННИСКА С ЛОГОТИПОМ MEYLE HD, L</div>
+                    <div class="description">
+                      <span class="unit">8 unit</span>
+                      <input warecode_="430729" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status red"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="446225" class="item" _val="9">
+                    <img class="image" src="./images/gift/446225.jpg">
+                    <div class="title">НАБОР ГОЛОВОК СО ВСТАВКОЙ TORX 1/2" BETA</div>
+                    <div class="description">
+                      <span class="unit">9 unit</span>
+                      <input warecode_="446225" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status green"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430738" class="item" _val="20">
+                    <img class="image" src="./images/gift/430738.jpg">
+                    <div class="title">ПОРТМОНЕ-КЛАТЧ BAELLERRY ITALIA</div>
+                    <div class="description">
+                      <span class="unit">20 unit</span>
+                      <input warecode_="430738" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status yellow"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430738" class="item" _val="30">
+                    <img class="image" src="./images/gift/430738.jpg">
+                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 10КГ</div>
+                    <div class="description">
+                      <span class="unit">30 unit</span>
+                      <input warecode_="430738" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status red"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430738" class="item" _val="300">
+                    <img class="image" src="./images/gift/430738.jpg">
+                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1000КГ</div>
+                    <div class="description">
+                      <span class="unit">300 unit</span>
+                      <input warecode_="430738" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status red"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430738" class="item" _val="3">
+                    <img class="image" src="./images/gift/430738.jpg">
+                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                    <div class="description">
+                      <span class="unit">3 unit</span>
+                      <input warecode_="430738" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status red"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430738" class="item" _val="3">
+                    <img class="image" src="./images/gift/430738.jpg">
+                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                    <div class="description">
+                      <span class="unit">3 unit</span>
+                      <input warecode_="430738" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status red"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                  <li id="430738" class="item" _val="3">
+                    <img class="image" src="./images/gift/430738.jpg">
+                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                    <div class="description">
+                      <span class="unit">3 unit</span>
+                      <input warecode_="430738" class="quantity-input" type="text" value="">
+                      <a href="" class="btn">
+                        <!-- border color change class : red , green , yellow -->
+                        <span class="btn-status red"></span>
+                        <span>Заказать</span>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+           </div> <!-- gift-container -->
+        </section>
+
+        <section id="info" class="info hide">
+          <div class="info-container">
+            <div class="info-body">
+              <div id="info-tabs" class="info-tabs">
+                <ul class="tabs-header">
+                  <li><a href="#info-tabs-1">Программа лояльности</a></li>
+                  <li><a href="#info-tabs-2">Гарантия</a></li>
+                  <li><a href="#info-tabs-3">Правила работы по приему возврата</a></li>
+                  <li><a href="#info-tabs-4">История обновлений</a></li>
+                  <li><a href="#info-tabs-5">Акция</a></li>
+                </ul>
+                <div id="info-tabs-1">
+                  <p>Программа лояльности</p>
+                </div>
+                <div id="info-tabs-2">
+                  <h1 class="title">Гарантийный срок на реализуемый товар - 12 месяцев</h1>
+                  <!-- warranty accordion -->
+                  <div id="warranty-accordion" class="warranty-accordion">
+                    <h3>Общие положения и используемые термины</h3>
+                    <div>
+                      <ol>
+                        <li>Настоящее Положение разработано в соответствии с требованиями Гражданского кодекса Украины, Закона Украины «О защите прав потребителей», «Порядка осуществления торговой деятельности и правил торгового обслуживания населения», «Правил розничной торговли непродовольственными товарами», Инструкций о порядке приемки продукции производственно-технического назначения и товаров народного потребления по качеству (П-7 от 25.04.1966г.) и количеству (П-6 от 15.06.1965г).</li>
+                        <li>ЧП Фирма «Владислав» устанавливает гарантийный срок на реализуемый товар 12 месяцев при условии соблюдения требований хранения, установки, использования, предусмотренных нормативными документами, техническими характеристиками и настоящим положением, за исключением товара, на который в соответствии с настоящим положением гарантия не распространяется, или на который предусмотрен другой гарантийный срок.</li>
+                        <li>ЧП Фирма «Владислав» гарантирует, что реализуемый товар является товаром надлежащего качества, то есть обладает в совокупности свойствами и характеристиками, способными удовлетворить установленные потребности покупателя (безопасность, функциональная пригодность, эксплуатационные характеристики, надежность, экономические, информационные и эстетические требования и др.).</li>
+                        <li>ЧП Фирма «Владислав» оказывает содействие покупателю в свободном выборе товара; обеспечивает вежливое и предупредительное обслуживание покупателей, реализацию их права на проверку комплектности и количества товара; консультирует их о назначении, свойствах, качестве товаров, ценах, предлагает новые, взаимозаменяемые товары и товары сопутствующего ассортимента.</li>
+                        <li>Гарантийный срок - календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренный законодательством или договором, в течение которых товар должен соответствовать требованиям к его качеству, определенным в порядке, установленном законодательством.</li>
+                        <li>Срок годности – срок, по истечении которого товар считается непригодным для использования по назначению.</li>
+                        <li>Срок службы – календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренные законодательством или договором, исходя из функционального назначения товара, в течение которых изготовитель обязуется обеспечивать потребителю возможность использования товара по назначению и нести ответственность за недостатки, возникшие по его вине.</li>
+                        <li>Товар – запасные части, комплектующие, соединения и элементы, узлы и агрегаты, смазочные материалы, автохимия и автокосметика для автомобилей и др., входящие в ассортиментный перечень предприятия.</li>
+                        <li>Гарантийный срок исчисляется с момента установки товара на транспортное средство.</li>
+                        <li>Срок годности товара определяется производителем и исчисляется с даты изготовления товара.</li>
+                        <li>Товары, на которые установлен срок годности, передаются покупателю с таким расчетом, чтобы они могли быть использованы по назначению до истечения срока годности.</li>
+                        <li>Настоящее Положение размещено на сайте order.vladislav.ua</li>
+                      </ol>
+                    </div>
+                    <h3>Порядок и сроки удовлетворения рекламаций</h3>
+                    <div>
+                      <ol>
+                        <li>Настоящее Положение разработано в соответствии с требованиями Гражданского кодекса Украины, Закона Украины «О защите прав потребителей», «Порядка осуществления торговой деятельности и правил торгового обслуживания населения», «Правил розничной торговли непродовольственными товарами», Инструкций о порядке приемки продукции производственно-технического назначения и товаров народного потребления по качеству (П-7 от 25.04.1966г.) и количеству (П-6 от 15.06.1965г).</li>
+                        <li>ЧП Фирма «Владислав» устанавливает гарантийный срок на реализуемый товар 12 месяцев при условии соблюдения требований хранения, установки, использования, предусмотренных нормативными документами, техническими характеристиками и настоящим положением, за исключением товара, на который в соответствии с настоящим положением гарантия не распространяется, или на который предусмотрен другой гарантийный срок.</li>
+                        <li>ЧП Фирма «Владислав» гарантирует, что реализуемый товар является товаром надлежащего качества, то есть обладает в совокупности свойствами и характеристиками, способными удовлетворить установленные потребности покупателя (безопасность, функциональная пригодность, эксплуатационные характеристики, надежность, экономические, информационные и эстетические требования и др.).</li>
+                        <li>ЧП Фирма «Владислав» оказывает содействие покупателю в свободном выборе товара; обеспечивает вежливое и предупредительное обслуживание покупателей, реализацию их права на проверку комплектности и количества товара; консультирует их о назначении, свойствах, качестве товаров, ценах, предлагает новые, взаимозаменяемые товары и товары сопутствующего ассортимента.</li>
+                        <li>Гарантийный срок - календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренный законодательством или договором, в течение которых товар должен соответствовать требованиям к его качеству, определенным в порядке, установленном законодательством.</li>
+                        <li>Срок годности – срок, по истечении которого товар считается непригодным для использования по назначению.</li>
+                        <li>Срок службы – календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренные законодательством или договором, исходя из функционального назначения товара, в течение которых изготовитель обязуется обеспечивать потребителю возможность использования товара по назначению и нести ответственность за недостатки, возникшие по его вине.</li>
+                        <li>Товар – запасные части, комплектующие, соединения и элементы, узлы и агрегаты, смазочные материалы, автохимия и автокосметика для автомобилей и др., входящие в ассортиментный перечень предприятия.</li>
+                        <li>Гарантийный срок исчисляется с момента установки товара на транспортное средство.</li>
+                        <li>Срок годности товара определяется производителем и исчисляется с даты изготовления товара.</li>
+                        <li>Товары, на которые установлен срок годности, передаются покупателю с таким расчетом, чтобы они могли быть использованы по назначению до истечения срока годности.</li>
+                        <li>Настоящее Положение размещено на сайте order.vladislav.ua</li>
+                      </ol>
+                    </div>
+                    <h3>Условия предоставления гарантийных обязательств</h3>
+                    <div>
+                      <ol>
+                        <li>Настоящее Положение разработано в соответствии с требованиями Гражданского кодекса Украины, Закона Украины «О защите прав потребителей», «Порядка осуществления торговой деятельности и правил торгового обслуживания населения», «Правил розничной торговли непродовольственными товарами», Инструкций о порядке приемки продукции производственно-технического назначения и товаров народного потребления по качеству (П-7 от 25.04.1966г.) и количеству (П-6 от 15.06.1965г).</li>
+                        <li>ЧП Фирма «Владислав» устанавливает гарантийный срок на реализуемый товар 12 месяцев при условии соблюдения требований хранения, установки, использования, предусмотренных нормативными документами, техническими характеристиками и настоящим положением, за исключением товара, на который в соответствии с настоящим положением гарантия не распространяется, или на который предусмотрен другой гарантийный срок.</li>
+                        <li>ЧП Фирма «Владислав» гарантирует, что реализуемый товар является товаром надлежащего качества, то есть обладает в совокупности свойствами и характеристиками, способными удовлетворить установленные потребности покупателя (безопасность, функциональная пригодность, эксплуатационные характеристики, надежность, экономические, информационные и эстетические требования и др.).</li>
+                        <li>ЧП Фирма «Владислав» оказывает содействие покупателю в свободном выборе товара; обеспечивает вежливое и предупредительное обслуживание покупателей, реализацию их права на проверку комплектности и количества товара; консультирует их о назначении, свойствах, качестве товаров, ценах, предлагает новые, взаимозаменяемые товары и товары сопутствующего ассортимента.</li>
+                        <li>Гарантийный срок - календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренный законодательством или договором, в течение которых товар должен соответствовать требованиям к его качеству, определенным в порядке, установленном законодательством.</li>
+                        <li>Срок годности – срок, по истечении которого товар считается непригодным для использования по назначению.</li>
+                        <li>Срок службы – календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренные законодательством или договором, исходя из функционального назначения товара, в течение которых изготовитель обязуется обеспечивать потребителю возможность использования товара по назначению и нести ответственность за недостатки, возникшие по его вине.</li>
+                        <li>Товар – запасные части, комплектующие, соединения и элементы, узлы и агрегаты, смазочные материалы, автохимия и автокосметика для автомобилей и др., входящие в ассортиментный перечень предприятия.</li>
+                        <li>Гарантийный срок исчисляется с момента установки товара на транспортное средство.</li>
+                        <li>Срок годности товара определяется производителем и исчисляется с даты изготовления товара.</li>
+                        <li>Товары, на которые установлен срок годности, передаются покупателю с таким расчетом, чтобы они могли быть использованы по назначению до истечения срока годности.</li>
+                        <li>Настоящее Положение размещено на сайте order.vladislav.ua</li>
+                      </ol>
+                    </div>
+                    <h3>Порядок и сроки рассмотрения рекламаций</h3>
+                    <div>
+                      <ol>
+                        <li>Настоящее Положение разработано в соответствии с требованиями Гражданского кодекса Украины, Закона Украины «О защите прав потребителей», «Порядка осуществления торговой деятельности и правил торгового обслуживания населения», «Правил розничной торговли непродовольственными товарами», Инструкций о порядке приемки продукции производственно-технического назначения и товаров народного потребления по качеству (П-7 от 25.04.1966г.) и количеству (П-6 от 15.06.1965г).</li>
+                        <li>ЧП Фирма «Владислав» устанавливает гарантийный срок на реализуемый товар 12 месяцев при условии соблюдения требований хранения, установки, использования, предусмотренных нормативными документами, техническими характеристиками и настоящим положением, за исключением товара, на который в соответствии с настоящим положением гарантия не распространяется, или на который предусмотрен другой гарантийный срок.</li>
+                        <li>ЧП Фирма «Владислав» гарантирует, что реализуемый товар является товаром надлежащего качества, то есть обладает в совокупности свойствами и характеристиками, способными удовлетворить установленные потребности покупателя (безопасность, функциональная пригодность, эксплуатационные характеристики, надежность, экономические, информационные и эстетические требования и др.).</li>
+                        <li>ЧП Фирма «Владислав» оказывает содействие покупателю в свободном выборе товара; обеспечивает вежливое и предупредительное обслуживание покупателей, реализацию их права на проверку комплектности и количества товара; консультирует их о назначении, свойствах, качестве товаров, ценах, предлагает новые, взаимозаменяемые товары и товары сопутствующего ассортимента.</li>
+                        <li>Гарантийный срок - календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренный законодательством или договором, в течение которых товар должен соответствовать требованиям к его качеству, определенным в порядке, установленном законодательством.</li>
+                        <li>Срок годности – срок, по истечении которого товар считается непригодным для использования по назначению.</li>
+                        <li>Срок службы – календарный срок, установленный в днях, месяцах, годах, или наработка, установленная в часах, циклах срабатываний, километрах пробега или иных аналогичных показателях, предусмотренные законодательством или договором, исходя из функционального назначения товара, в течение которых изготовитель обязуется обеспечивать потребителю возможность использования товара по назначению и нести ответственность за недостатки, возникшие по его вине.</li>
+                        <li>Товар – запасные части, комплектующие, соединения и элементы, узлы и агрегаты, смазочные материалы, автохимия и автокосметика для автомобилей и др., входящие в ассортиментный перечень предприятия.</li>
+                        <li>Гарантийный срок исчисляется с момента установки товара на транспортное средство.</li>
+                        <li>Срок годности товара определяется производителем и исчисляется с даты изготовления товара.</li>
+                        <li>Товары, на которые установлен срок годности, передаются покупателю с таким расчетом, чтобы они могли быть использованы по назначению до истечения срока годности.</li>
+                        <li>Настоящее Положение размещено на сайте order.vladislav.ua</li>
+                      </ol>
+                    </div>
+                    </div>
+                  <!-- warranty accordion -->
+                </div>
+                <div id="info-tabs-3">
+                  <p>Правила работы по приему возврата</p>
+                </div>
+                <div id="info-tabs-4">
+                  <p>История обновлений</p>
+                </div>
+                <div id="info-tabs-5">
+                  <p>Акция</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <!-- footer -->
+        <footer class="main-footer">
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="shipment-wrap">
+                <a href="#" class="shipment btn btn-success">Отгрузка разрешена</a>
+                <p class="exchange-rates">1 y.e = 28,50 грн</p>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="promotion-wrap">
+                <div class="promotion long num-1">
+                  <a href="#" class="long-banner-img">
+                    <img src="./images/footer-img-1.jpg" alt="footer img">
+                    <div class="long-banner-txt">
+                      <p>Длинные названия Товары Motul 76ед.</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="promotion num-2">
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <a href="#">
+                        <img src="./images/footer-img-2.jpg" alt="footer img">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p>Длинные названия Товары Motul 76 ед.</p>
+                      <p>ВЕТА</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="promotion num-3">
+                  <div class="media">
+                    <div class="media-left media-middle">
+                      <a href="#">
+                        <img src="./images/footer-img-3.jpg" alt="footer img">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <p>Длинные названия Товары Motul 76 ед.</p>
+                      <p>ВЕТА</p>
+                      <p class="unit">160 unit</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- footer -->
+      </main>
+      <!-- Main section-->
+
+
+
+    </div>
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap-datepicker.ru.min.js"></script>
+    <script src="js/widgetSearchVinBox.js"></script>
+    <script src="js/widgetSearchBox.js"></script>
+    <script src="js/gift.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

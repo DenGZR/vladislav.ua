@@ -1,0 +1,108 @@
+@import "../theme/index";
+
+.info {
+  margin-top: 15px;
+
+  .info-container {
+    .info-body {
+      .info-tabs {
+        padding: 0;
+        border: none;
+        background: transparent;
+
+        &>div {
+          padding: 20px 15px;
+        }
+
+        .tabs-header {
+          border: none;
+          background: transparent;
+          color: @color-text;
+          border-bottom: 1px solid @color-border;
+          border-radius: 0;
+
+          .ui-state-default {
+            background: #ffffff;
+            &>a {
+              color: @color-text;
+            }
+          }
+
+
+
+          .ui-state-default.ui-state-active {
+            background: @color-link;
+            &>a {
+              color: #ffffff;
+            }
+          }
+
+        }
+      }
+
+      .title {
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .warranty-accordion {
+        margin-top: 20px;
+
+        .ui-widget-content {
+          background: transparent;
+          color: @color-text;
+          border: none;
+          padding: 0 25px;
+        }
+
+        .ui-accordion-header {
+          border: none;
+          color: @color-link;
+          font-size: 14px;
+          padding: 5px 0;
+          // font-weight: bold;
+
+          &:hover,
+          &:focus {
+            background: transparent;
+            border: none;
+            outline-style: none;
+          }
+
+          .ui-icon {
+            background: url(../images/warranty-accordion-arr-img.png);
+            width: 16px;
+            height: 10px;
+            margin-right: 10px;
+            display: inline-block;
+            transform: rotate(180deg);
+          }
+
+        }
+        .ui-accordion-header-active {
+          border: none;
+          color: @color-link;
+          background: transparent;
+          font-size: 14px;
+          // font-weight: bold;
+
+
+          .ui-icon {
+            background: url(../images/warranty-accordion-arr-img.png);
+            width: 16px;
+            height: 10px;
+            display: inline-block;
+            transform: rotate(0deg);
+          }
+        }
+
+
+        ol>li {
+          list-style-type: decimal;
+          color: #000000;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

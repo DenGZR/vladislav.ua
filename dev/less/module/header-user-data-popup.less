@@ -1,0 +1,58 @@
+@import "../theme/index";
+
+.user-data-popup {
+  position: absolute;
+  left: -115px;
+  top: 40px;
+  z-index: 1000;
+  width: 230px;
+  text-align: left;
+  padding: 10px;
+  background: @bg-white;
+  border: 1px solid @color-border;
+  border-radius: 5px;
+
+  &:after {
+    content: "";
+    width: 15px;
+    display: block;
+    transform: rotate(45deg);
+    background: #fff;
+    height: 15px;
+    position: absolute;
+    top: -8px;
+    right: 45px;
+    border-left: 1px solid #d4d9e3;
+    border-top: 1px solid #d4d9e3;
+  }
+
+  .popup-close-btn {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 5px;
+  }
+
+  &>div {
+    padding-bottom: 15px;
+    border-bottom: 1px solid @color-border;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .data-item {
+    padding: 15px 0 0 15px;
+    color: @color-link;
+
+    &>span {
+      color: @color-text;
+    }
+  }
+
+}

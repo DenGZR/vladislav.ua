@@ -1,0 +1,245 @@
+@import "../theme/index";
+
+.header-navigation {
+  padding: 5px 10px 13px 15px;
+  background: #ffffff;
+  border-bottom: 1px solid @color-border;
+  position: relative;
+
+  .main-search,
+  .vin-search {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 1%;
+  }
+
+  .search-form {
+    display: inline-block;
+    border: 1px solid @color-border;
+    border-radius: 3px;
+    position: relative;
+    width: 170px;
+    height: 25px;
+    margin-left: 1%;
+    top: 5px;
+    overflow: hidden;
+
+
+    .input-field {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 115px;
+      height: 25px;
+      border: none;
+      padding: 0 0 0 5px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 0;
+      right: 32px;
+      display: inline-block;
+      background-image: url(../images/ui-icons.png);
+      background-position: -62px -12px;
+      height: 25px;
+      width:  22px;
+    }
+
+    .magnifier {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      height: 25px;
+      width:  32px;
+      border-left: 1px solid @color-border;
+      .sprite-icon-position( -282px, -208px  );
+    }
+
+  }
+
+  .magnifier-search-all {
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid @color-border;
+    border-radius: 3px;
+    position: relative;
+    width: 32px;
+    height: 25px;
+    top: 5px;
+    margin-left: 1%;
+    .sprite-icon-position( -282px, -178px  );
+
+    &:hover {
+      .sprite-icon-position( -351px, -178px  );
+      border: 1px solid @color-link;
+    }
+  }
+
+  .navigation-list {
+    display: inline-block;
+
+
+    &>li {
+      display: inline-block;
+
+      &>a {
+        color: @color-text;
+        font-weight: 500;
+        padding-right: 15px;
+        font-size: 14px;
+        position: relative;
+        top: -2px;
+
+
+        &:hover {
+          color: @color-link;
+        }
+      }
+    }
+// Заказы
+    .orders {
+      &:before {
+        .header-navigation-icon( -25px, -2px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -2px );
+        }
+      }
+    }
+// Резерв
+    .reserve {
+      &:before {
+        .header-navigation-icon( -25px, -30px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -30px );
+        }
+      }
+    }
+// Контракты
+    .contacts {
+      &:before {
+        .header-navigation-icon( -25px, -58px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -58px );
+        }
+      }
+    }
+// Подарки
+    .gifts {
+      &:before {
+        .header-navigation-icon( -25px, -87px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -87px );
+        }
+      }
+    }
+
+    &.right {
+      // float: right;
+      position: absolute;
+      right: 0;
+      top: 9px;
+
+      &>li>a {
+        padding: 0;
+      }
+// диаграмма
+      .chart {
+        &:before {
+          .header-navigation-icon( -25px, -115px );
+        }
+        &:hover {
+          &:before {
+            .header-navigation-icon( -95px, -115px );
+          }
+        }
+      }
+// телефон
+    .phone {
+      &:before {
+        .header-navigation-icon( -25px, -143px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -143px );
+        }
+      }
+    }
+// email
+    .email {
+      &:before {
+        .header-navigation-icon( -25px, -169px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -169px );
+        }
+      }
+    }
+// info
+    .info {
+      &:before {
+        .header-navigation-icon( -25px, -199px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -199px );
+        }
+      }
+    }
+// настройки
+    .set {
+      &:before {
+        .header-navigation-icon( -25px, -230px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -230px );
+        }
+      }
+    }
+// выход
+    .logout {
+      &:before {
+        .header-navigation-icon( -25px, -259px );
+      }
+      &:hover {
+        &:before {
+          .header-navigation-icon( -95px, -259px );
+        }
+      }
+    }
+//
+    }
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+
+  .header-navigation {
+    .navigation-list {
+      &>li>a {
+        // padding: 0 0 0 15px;
+      }
+
+      &.left>li>a::before{
+        display: none;
+      }
+      &.left>li>a:hover{
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}

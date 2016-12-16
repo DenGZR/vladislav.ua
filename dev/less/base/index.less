@@ -1,0 +1,49 @@
+@import "../theme/index";
+@import "reset";
+
+html {
+  font-size: @font-size-normal;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: @font-stack;
+  color: @color-text;
+
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  border: 0;
+  outline: none;
+}
+
+a {
+  outline: none;
+}
+
+a,button:focus {
+  outline: none;
+}
+
+// tool tips
+label {
+  display: inline-block;
+  width: 5em;
+}
+
+input[type="text"]:focus { outline: none; }
