@@ -93,6 +93,32 @@ $( function() {
     // close popup
     $(document).on('keydown', closePopupHandler );
 
+    // only for test
+      $('.main-header').on('click', function (event) {
+        var target = $(event.target);
+        var sectionAll = $('.main-content section');
+
+        if(target.hasClass('magnifier')) {
+          sectionAll.addClass('hide');
+          $('.order').removeClass('hide');
+          $('.search-result').removeClass('hide');
+        }
+
+        if(target.hasClass('info')) {
+          sectionAll.addClass('hide');
+          $('.info').removeClass('hide');
+
+        }
+
+        if(target.hasClass('gifts')) {
+          sectionAll.addClass('hide');
+
+          $('.order').removeClass('hide').addClass('unit');
+          $('.gift').removeClass('hide');
+        }
+
+
+      });
 
 
 

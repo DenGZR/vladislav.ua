@@ -47,8 +47,6 @@ $( function() {
   // available gift
   $('#gift .gift-header .available').on('click', availableBtnHandler );
 
-  // $('#gift .filter-by-category, #gift .selected-category').on('click', categoryFilterHandler );
-
   $(document).on('click', categoryFilterHandler );
 
 
@@ -230,7 +228,9 @@ $( function() {
         })
         $('#gift .gift-header .selected-category').prepend(ul);
         clearBtn.toggleClass('hide');
+
         console.log(selCategory);
+        sorter.byCategory(selCategory);
       }
 
       // delete btn
@@ -276,6 +276,7 @@ $( function() {
       this.asc = asc;
       this.desc = desc;
       this.byRange = byRange;
+      this.byCategory = byCategory;
 
       function init() {
         console.log('init');
@@ -284,7 +285,7 @@ $( function() {
         items.sort(dirASC);
         render(items);
 
-      }
+      };
 
       function asc() {
         console.log('asc');
@@ -292,7 +293,7 @@ $( function() {
         render(items);
 
         return this;
-      }
+      };
 
       function desc() {
         console.log('desc');
@@ -300,24 +301,34 @@ $( function() {
         render(items);
 
         return this;
-      }
+      };
 
       function byRange(min, max) {
-        var currentCost;
+        var currentCost, self;
         console.log('byRange', min, max);
 
         $.each( items, function(){
           self = $(this);
-          currentCost = self.attr('_val');
+          isRange(self, min, max);
 
-          if( min <= currentCost && currentCost <= max ) {
-            self.removeClass('hide');
-          } else {
-            self.addClass('hide');
-          }
         });
 
-      }
+      };
+
+      function isRange(item, min, max) {
+
+        var itemCost = item.attr('_val');
+        console.log('itemCost', min, max, itemCost );
+
+        if( min <= itemCost && itemCost <= max ) {
+          item.removeClass('hide');
+          return true;
+        } else {
+          item.addClass('hide');
+          return false;
+        }
+
+      };
 
       // compare function
       function dirASC(itemA, itemB) {
@@ -332,6 +343,55 @@ $( function() {
         itemA = $(itemA).attr('_val');
         itemB = $(itemB).attr('_val');
         return parseFloat(itemB) - parseFloat(itemA);
+      };
+
+      function byCategory( categoryList ) {
+        console.log('filter by category', categoryList);
+        console.log('items', items);
+        var tempArr = [];
+        var categoryFilter = [];
+
+        categoryList.each(function(i, item) {
+          var input = $(item).find('input');
+
+          categoryFilter.push({
+            attrgroup: input.attr('groupcode_'),
+            codeattr: input.attr('secondgroupsubcode_'),
+            codeval: input.attr('secondgroupcode_')
+          })
+        });
+
+        console.log( 'categoryFilter', categoryFilter );
+
+        items.each(function() {
+          var li = $(this);
+          var itemAttr = {
+            attrgroup: li.attr('attrgroup_'),
+            codeattr: li.attr('codeattr_') ? li.attr('codeattr_').split(',').filter(function(item) { return !!item}) : li.attr('codeattr_'),
+            codeval: li.attr('codeval_') ? li.attr('codeval_').split(',').filter(function(item) { return !!item}) : li.attr('codeval_')
+          };
+         console.log(itemAttr);
+
+          categoryFilter.forEach(function(filterItem) {
+
+            if( filterItem.attrgroup && filterItem.attrgroup == itemAttr.attrgroup ) {
+              if( itemAttr.codeattr.indexOf(filterItem.codeattr) === itemAttr.codeval.indexOf(filterItem.codeval)) {
+                console.log("filter ok -->", li);
+                if(isRange(li, minCost,maxCost)) {
+                  tempArr.push(li);
+                }
+
+              }
+            }
+          })
+
+          return false;
+        })
+
+        console.log('tempArr --> ', tempArr);
+
+        items.addClass('hide');
+        // sorter.byRange(minCost,maxCost);
       };
 
       // render gifts list items
