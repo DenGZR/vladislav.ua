@@ -346,53 +346,78 @@ $( function() {
       };
 
       function byCategory( categoryList ) {
-        console.log('filter by category', categoryList);
-        console.log('items', items);
-        var tempArr = [];
-        var categoryFilter = [];
-
-        categoryList.each(function(i, item) {
-          var input = $(item).find('input');
-
-          categoryFilter.push({
-            attrgroup: input.attr('groupcode_'),
-            codeattr: input.attr('secondgroupsubcode_'),
-            codeval: input.attr('secondgroupcode_')
-          })
-        });
-
-        console.log( 'categoryFilter', categoryFilter );
-
-        items.each(function() {
-          var li = $(this);
-          var itemAttr = {
-            attrgroup: li.attr('attrgroup_'),
-            codeattr: li.attr('codeattr_') ? li.attr('codeattr_').split(',').filter(function(item) { return !!item}) : li.attr('codeattr_'),
-            codeval: li.attr('codeval_') ? li.attr('codeval_').split(',').filter(function(item) { return !!item}) : li.attr('codeval_')
-          };
-         console.log(itemAttr);
-
-          categoryFilter.forEach(function(filterItem) {
-
-            if( filterItem.attrgroup && filterItem.attrgroup == itemAttr.attrgroup ) {
-              if( itemAttr.codeattr.indexOf(filterItem.codeattr) === itemAttr.codeval.indexOf(filterItem.codeval)) {
-                console.log("filter ok -->", li);
-                if(isRange(li, minCost,maxCost)) {
-                  tempArr.push(li);
-                }
-
-              }
-            }
-          })
-
-          return false;
-        })
-
-        console.log('tempArr --> ', tempArr);
+        var resultArr,
+            categoryFilter,
+            itemAttr,
+            li;
 
         items.addClass('hide');
+        console.log('filter by category', categoryList);
+
+        resultArr = [];
+        giftList = [];
+        categoryFilter = getCheckboxAttrArr(categoryList);
+        console.log( 'categoryFilter', categoryFilter );
+
+
+
+
+        // items.each(function() {
+        $.each( items, function() {
+          li = $(this);
+          itemAttr = getGiftItemAttr( li );
+
+          console.log('GiftAttr -- ', itemAttr);
+
+          categoryFilter.each(function(i,filterItem) {
+              console.log('FilterAttr -- ', filterItem);
+
+              if( filterItem.attrgroup == itemAttr.attrgroup ) {
+                if( itemAttr.codeattr.indexOf(filterItem.codeattr) === itemAttr.codeval.indexOf(filterItem.codeval)) {
+                  console.log("filter ok -->", this);
+                  if(isRange(li, minCost,maxCost)) {
+                    resultArr.push(li);
+
+                  }
+
+                }
+              }
+          })
+
+
+        })
+
+        console.log('resultArr --> ', resultArr);
+
+
         // sorter.byRange(minCost,maxCost);
       };
+
+      function getCheckboxAttrArr(items) {
+        return items.map(function(i, item) {
+            var input = $(item).find('input');
+
+          return {
+              attrgroup: input.attr('groupcode_'),
+              codeval: input.attr('secondgroupcode_'),
+              codeattr: input.attr('secondgroupsubcode_')
+
+            }
+          })
+      };
+
+      function getGiftItemAttr(li) {
+
+        return {
+          attrgroup: li.attr('attrgroup_'),
+          codeval: li.attr('codeval_') ? li.attr('codeval_').split(',').filter(function(item) { return !!item}) : li.attr('codeval_'),
+          codeattr: li.attr('codeattr_') ? li.attr('codeattr_').split(',').filter(function(item) { return !!item}) : li.attr('codeattr_')
+        }
+      };
+
+      function checkItemByAttr(elem, attrObj) {
+
+      }
 
       // render gifts list items
       function render(itemArr) {
