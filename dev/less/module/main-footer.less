@@ -9,8 +9,6 @@
   overflow: hidden;
 
   .shipment-wrap {
-    width: 80%;
-    margin: 0 auto;
     text-align: center;
 
     .shipment {
@@ -75,11 +73,19 @@
         }
       }
 
-      .media img {
-        padding: 10px 20px;
-        border: 1px solid @color-border;
-        border-radius: 3px;
-        height: 100px;
+      .media {
+        .image-wrap {
+          overflow: hidden;
+          display: inline-block;
+          padding: 10px 20px;
+          border: 1px solid @color-border;
+          border-radius: 3px;
+          height: 100px;
+
+          img {
+            height: 90%;
+          }
+        }
       }
 
       .media-body {

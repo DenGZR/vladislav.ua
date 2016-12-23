@@ -231,8 +231,6 @@ input[type="text"]:focus {
   overflow: hidden;
 }
 .main-footer .shipment-wrap {
-  width: 80%;
-  margin: 0 auto;
   text-align: center;
 }
 .main-footer .shipment-wrap .shipment {
@@ -288,11 +286,16 @@ input[type="text"]:focus {
 .main-footer .promotion-wrap .promotion .long-banner-txt > p {
   margin-top: 20px;
 }
-.main-footer .promotion-wrap .promotion .media img {
+.main-footer .promotion-wrap .promotion .media .image-wrap {
+  overflow: hidden;
+  display: inline-block;
   padding: 10px 20px;
   border: 1px solid #d4d9e3;
   border-radius: 3px;
   height: 100px;
+}
+.main-footer .promotion-wrap .promotion .media .image-wrap img {
+  height: 90%;
 }
 .main-footer .promotion-wrap .promotion .media-body {
   font-size: 12px;
@@ -660,6 +663,9 @@ input[type="text"]:focus {
 .search-result {
   margin: 15px 15px 0 15px;
 }
+.search-result.right-bar {
+  margin: 15px 130px 0 15px;
+}
 .search-result .search-container {
   border: 1px solid #d4d9e3;
   border-radius: 5px;
@@ -671,11 +677,17 @@ input[type="text"]:focus {
 .search-result .search-container .search-header .search-title {
   padding: 10px;
   margin-right: 20px;
+  overflow: hidden;
 }
 .search-result .search-container .search-header .search-title .title {
   font-weight: bold;
   margin-right: 10px;
   color: #000;
+  float: left;
+}
+.search-result .search-container .search-header .search-title .name {
+  width: 60%;
+  float: left;
 }
 .search-result .search-container .search-header .close {
   padding-top: 5px;
@@ -746,8 +758,8 @@ input[type="text"]:focus {
   min-width: 20px;
 }
 .search-result .search-container .search-body {
-  max-height: 230px;
-  overflow: auto;
+  height: 230px;
+  overflow: hidden;
 }
 .search-result .search-container .search-body .table {
   margin-bottom: 0;
@@ -772,6 +784,7 @@ input[type="text"]:focus {
   vertical-align: middle;
   padding: 5px 0 2px 5px;
   line-height: normal;
+  min-width: 410px;
 }
 .search-result .search-container .search-body .table .table-row .col-checkbox {
   text-align: center;
@@ -802,6 +815,7 @@ input[type="text"]:focus {
 }
 .search-result .search-container .search-body .table .col-checkbox {
   min-width: 35px;
+  width: 35px;
   vertical-align: top;
   /* Base for label styling */
   /* checkbox aspect */
@@ -881,10 +895,17 @@ input[type="text"]:focus {
   text-transform: uppercase;
   color: #000;
   font-weight: 600;
+  max-width: 330px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .search-result .search-container .search-body .table .col-discription .status {
   margin-left: 15px;
   font-style: italic;
+  display: inline-block;
+  overflow: hidden;
 }
 .search-result .search-container .search-body .table .col-discription .status.stock {
   color: #029e4e;
@@ -897,7 +918,6 @@ input[type="text"]:focus {
 }
 .search-result .search-container .search-body .table .col-discription .discription {
   max-width: 400px;
-  display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -957,6 +977,7 @@ input[type="text"]:focus {
 }
 .search-result .search-container .search-body .table .col {
   min-width: 100px;
+  width: 100px;
   text-align: center;
   vertical-align: middle;
   padding: 0;
@@ -1050,6 +1071,9 @@ a.ui-button:active,
 }
 .order {
   margin: 15px 15px 0 15px;
+}
+.order.right-bar {
+  margin: 15px 130px 0 15px;
 }
 .order.unit .order-container .order-header .header-title .unit-motion {
   display: inline-block;
@@ -1387,8 +1411,8 @@ a.ui-button:active,
   text-overflow: ellipsis;
 }
 .order .order-container .order-body .order-table-body-wrap {
-  max-height: 200px;
-  overflow: auto;
+  height: 200px;
+  overflow: hidden;
 }
 .order .order-container .order-body .order-table-body-wrap .table-boby {
   margin-bottom: 0;
@@ -1488,13 +1512,20 @@ a.ui-button:active,
 .order .order-container .order-body .order-table-body-wrap .table-boby .col-discription {
   text-align: left;
   vertical-align: middle;
-  line-height: 0.9;
+  line-height: normal;
+  padding-left: 10px;
 }
 .order .order-container .order-body .order-table-body-wrap .table-boby .col-discription .title {
   text-transform: uppercase;
   color: #000;
   font-weight: 600;
-  padding-left: 10px;
+  display: inline-block;
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  top: 2px;
 }
 .order .order-container .order-body .order-table-body-wrap .table-boby .col-discription .discription {
   max-width: 400px;
@@ -1541,6 +1572,9 @@ a.ui-button:active,
 .gift {
   margin: 15px 15px 0 15px;
 }
+.gift.right-bar {
+  margin: 15px 130px 0 15px;
+}
 .gift .gift-container {
   border: 1px solid #d4d9e3;
   border-radius: 5px;
@@ -1554,7 +1588,7 @@ a.ui-button:active,
 }
 .gift .gift-container .gift-header .cost-filter {
   position: relative;
-  margin-left: 20px;
+  margin-left: 1%;
   padding: 5px;
   top: -5px;
   color: #2c80c9;
@@ -1911,7 +1945,7 @@ a.ui-button:active,
 }
 .gift .gift-container .gift-header .list-view {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 1%;
   width: 22px;
   height: 22px;
   background-image: url(../images/sprite.png);
@@ -1923,7 +1957,7 @@ a.ui-button:active,
 }
 .gift .gift-container .gift-header .blocks-view {
   display: inline-block;
-  margin-left: 25px;
+  margin-left: 1.6%;
   width: 22px;
   height: 22px;
   background-image: url(../images/sprite.png);
@@ -2013,7 +2047,8 @@ a.ui-button:active,
 .gift .gift-container .gift-body .items.list .item .title {
   position: relative;
   display: inline-block;
-  width: 45%;
+  white-space: nowrap;
+  width: 50%;
   margin: 0 15px;
   top: -25px;
 }
@@ -2054,6 +2089,10 @@ a.ui-button:active,
   margin-top: 10px;
 }
 @media screen and (max-width: 980px) {
+  .gift .gift-container .gift-header .available {
+    display: inline;
+    margin-left: 1%;
+  }
   .gift .gift-container .gift-body .items.blocks {
     padding-right: 2%;
   }
@@ -2077,7 +2116,7 @@ a.ui-button:active,
   top: 20%;
   margin: 0 auto;
   width: 50%;
-  min-width: 500px;
+  min-width: 600px;
   min-height: 450px;
   background: #ffffff;
   z-index: 1000;
@@ -2602,4 +2641,14 @@ a.ui-button:active,
   background-color: #2166a2;
   color: #ffffff;
   border-radius: 50%;
+}
+.right-sidebar {
+  width: 100px;
+  height: 70%;
+  background: #fff;
+  border: 1px solid #d4d9e3;
+  border-radius: 5px;
+  position: absolute;
+  top: 131px;
+  right: 15px;
 }

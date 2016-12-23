@@ -123,7 +123,7 @@ $( function() {
       }
 
       $("#slider").slider("values",0,minCost);
-    	$("#slider").slider("values",1,maxCost);
+      $("#slider").slider("values",1,maxCost);
 
       sorter.byRange(minCost,maxCost);
 
@@ -204,6 +204,7 @@ $( function() {
         if( ul.length ) {
           clearBtn.toggleClass('hide');
         }
+        sorter.clearByCategory();
         return;
       }
 
@@ -243,21 +244,17 @@ $( function() {
         $('#'+inputId).prop( "checked", false );
         target.parent('li').remove();
         li = $('#gift .gift-header .selected-category ul li');
+        sorter.byCategory(li);
 
         if( !li.length ) {
           clearBtn.toggleClass('hide');
           $('#gift .gift-header .selected-category ul').remove();
+          sorter.clearByCategory();
         }
 
       }
-
-
-
-
-
     }
-
-
+  
 
     // Сортировка может проводиться по возрастанию (ASC) или по убыванию (DESC).
     // по умолчанию предполагается режим сортировки по возрастанию (ASC).
@@ -277,6 +274,7 @@ $( function() {
       this.desc = desc;
       this.byRange = byRange;
       this.byCategory = byCategory;
+      this.clearByCategory = clearByCategory;
 
       function init() {
         console.log('init');
@@ -302,6 +300,13 @@ $( function() {
 
         return this;
       };
+
+      function clearByCategory() {
+        items.removeClass('hide');
+        byRange(minCost,maxCost);
+
+
+      }
 
       function byRange(min, max) {
         var currentCost, self;
@@ -367,17 +372,17 @@ $( function() {
           li = $(this);
           itemAttr = getGiftItemAttr( li );
 
-          console.log('GiftAttr -- ', itemAttr);
+          // console.log('GiftAttr -- ', itemAttr);
 
           categoryFilter.each(function(i,filterItem) {
-              console.log('FilterAttr -- ', filterItem);
+              // console.log('FilterAttr -- ', filterItem);
 
               if( filterItem.attrgroup == itemAttr.attrgroup ) {
                 if( itemAttr.codeattr.indexOf(filterItem.codeattr) === itemAttr.codeval.indexOf(filterItem.codeval)) {
-                  console.log("filter ok -->", this);
+                  console.log("filter ok -->", li);
                   if(isRange(li, minCost,maxCost)) {
                     resultArr.push(li);
-
+                    li.removeClass('hide');
                   }
 
                 }
@@ -393,6 +398,27 @@ $( function() {
         // sorter.byRange(minCost,maxCost);
       };
 
+      function createCategoryFilter( node, filterAttr ) {
+        var result = false;
+
+        filterAttr.each(function(i,filterItem) {
+
+            if( filterItem.attrgroup == itemAttr.attrgroup ) {
+              debugger;
+              if( itemAttr.codeattr.indexOf(filterItem.codeattr) === itemAttr.codeval.indexOf(filterItem.codeval)) {
+                console.log("filter ok -->", node );
+                if(isRange( node, minCost, maxCost )) {
+                  resultArr.push(li);
+                  li.removeClass('hide');
+                  result = true;
+                }
+
+              }
+            }
+        })
+
+      }
+
       function getCheckboxAttrArr(items) {
         return items.map(function(i, item) {
             var input = $(item).find('input');
@@ -407,17 +433,14 @@ $( function() {
       };
 
       function getGiftItemAttr(li) {
-
         return {
           attrgroup: li.attr('attrgroup_'),
-          codeval: li.attr('codeval_') ? li.attr('codeval_').split(',').filter(function(item) { return !!item}) : li.attr('codeval_'),
-          codeattr: li.attr('codeattr_') ? li.attr('codeattr_').split(',').filter(function(item) { return !!item}) : li.attr('codeattr_')
+          codeval: li.attr('codeval_') ,
+          codeattr: li.attr('codeattr_')
         }
       };
 
-      function checkItemByAttr(elem, attrObj) {
 
-      }
 
       // render gifts list items
       function render(itemArr) {

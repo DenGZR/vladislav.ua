@@ -3,7 +3,9 @@
 .search-result {
   margin: 15px 15px 0 15px;
 
-
+  &.right-bar {
+    margin: 15px 130px 0 15px;
+  }
   .search-container {
     border: 1px solid @color-border;
     border-radius: 5px;
@@ -17,11 +19,18 @@
       .search-title {
         padding: 10px;
         margin-right: 20px;
+        overflow: hidden;
 
         .title {
           font-weight: bold;
           margin-right: 10px;
           color: #000;
+          float: left;
+        }
+
+        .name {
+          width: 60%;
+          float: left;
         }
       }
 
@@ -112,8 +121,8 @@
 
     .search-body {
 
-      max-height: 230px;
-      overflow: auto;;
+      height: 230px;
+      overflow: hidden;
 
       .table {
         margin-bottom: 0;
@@ -143,6 +152,7 @@
           vertical-align: middle;
           padding: 5px 0 2px 5px;
           line-height: normal;
+          min-width: 410px;
         }
 
         .table-row {
@@ -189,6 +199,7 @@
 
         .col-checkbox {
           min-width: 35px;
+          width: 35px;
           vertical-align: top;
 
           /* Base for label styling */
@@ -270,10 +281,17 @@
             text-transform: uppercase;
             color: #000;
             font-weight: 600;
+            max-width: 330px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           .status {
               margin-left: 15px;
               font-style: italic;
+              display: inline-block;
+              overflow: hidden;
             &.stock {
               // green
               color: @color-status-stok;
@@ -289,7 +307,6 @@
           }
           .discription {
             max-width: 400px;
-            display: inline-block;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -365,6 +382,7 @@
 
         .col {
           min-width: 100px;
+          width: 100px;
           text-align: center;
           vertical-align: middle;
           padding: 0;

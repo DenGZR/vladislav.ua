@@ -2,6 +2,11 @@
 
 .gift {
   margin: 15px 15px 0 15px;
+
+  &.right-bar {
+    margin: 15px 130px 0 15px;
+  }
+
   .gift-container {
     border: 1px solid @color-border;
     border-radius: 5px;
@@ -17,7 +22,7 @@
 
         .cost-filter {
           position: relative;
-          margin-left: 20px;
+          margin-left: 1%;
           padding: 5px;
           top: -5px;
           color: @color-link;
@@ -391,7 +396,7 @@
 
       .list-view {
         display: inline-block;
-        margin-left: 20px;
+        margin-left: 1%;
         width: 22px;
         height: 22px;
         .sprite-icon-position( -284px, -434px );
@@ -403,7 +408,7 @@
       }
       .blocks-view {
         display: inline-block;
-        margin-left: 25px;
+        margin-left: 1.6%;
         width: 22px;
         height: 22px;
         .sprite-icon-position( -284px, -402px );
@@ -515,7 +520,8 @@
             .title {
               position: relative;
               display: inline-block;
-              width: 45%;
+              white-space: nowrap;
+              width: 50%;
               margin: 0 15px;
               top: -25px;
 
@@ -579,6 +585,10 @@
 
   .gift {
     .gift-container {
+      .gift-header .available {
+        display: inline;
+        margin-left: 1%;
+      }
       .gift-body {
         .items{
           &.blocks {

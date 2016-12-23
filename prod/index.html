@@ -77,16 +77,7 @@
                 <option value="test2">рыба vin-2</option> -->
               </select>
             </div>
-            <!-- <form action="#" class="main-search search-form">
-                <input type="text" id="main-search-input" class="input-field" placeholder="Поиск товара" title="Последние поисковые запросы по товарам">
-                <span class="arrow"></span>
-                <span class="magnifier"></span>
-            </form> -->
-            <!-- <form action="#" class="vin-search search-form">
-                <input type="text" id="vin-search-input" class="input-field" placeholder="Поиск по VIN" title="Последние поисковые запросы по VIN">
-                <span class="arrow"></span>
-                <span class="magnifier"></span>
-            </form> -->
+
             <span class="magnifier-search-all" title="Все подборы в одном окне"></span>
             <ul class="navigation-list right">
               <li><a href="#" class="chart" title="Финансовая информация"></a></li>
@@ -101,7 +92,7 @@
         <!-- Header -->
 
         <section id="popup-search-tree" class="popup-search-tree popup-box hide">
-          <div class="search-tree-container">
+          <div class="search-tree-container" id="search-tree-container">
               <div class="search-tree-header">
                 <h3 class="title">Подбор запчастей</h3>
                 <button type="button" class="close"><span aria-hidden="true" >&times;</span></button>
@@ -295,13 +286,13 @@
           </div>
         </section>
 
-        <section id="search-result" class="search-result hide">
+        <section id="search-result" class="search-result hide ">
           <div class="search-container">
             <div class="search-header">
               <button type="button" class="close"><span aria-hidden="true" >&times;</span></button>
               <div class="search-title">
                 <span class="title">Результат подбора товара по узлу: </span>
-                <span>КОМПЛЕКТ ПОРШНЕВЫХ КОЛЕЦ МОД</span>
+                <span class="name">КОМПЛЕКТ ПОРШНЕВЫХ КОЛЕЦ МОД</span>
               </div>
               <div class="search-header-table">
                 <table class="table">
@@ -1145,7 +1136,7 @@
                     <div class="list-wrap">
                       <div class="list" id="list-category" data-mcs-theme="inset-dark">
                           <ul class="main-list">
-                            <li>
+                            <li groupcode_="2">
                               <span class="category-name" id="c1">Одежда</span>
                               <ul class="sub-list">
                                 <li>
@@ -1173,32 +1164,32 @@
                                     </li>
                                   </ul>
                                 </li>
-                                <li class="hide">
+                                <li class="hide" >
                                   <span class="category-name " id="c1-2">Размер</span>
                                   <ul class="sub-list">
                                     <li>
-                                      <input type="checkbox" id="c1-2-1" >
+                                      <input type="checkbox" id="c1-2-1" qvwares_="1" secondgroupname_="Размер" secondgroupcode_="10" secondgroupsubcode_="44" secondgroupsubname_="M (48)" groupcode_="2" >
                                       <label for="c1-2-1"></label>
                                       <span class="txt">M (48)</span>
                                     </li>
                                     <li>
-                                      <input type="checkbox" id="c1-2-2" >
+                                      <input type="checkbox" id="c1-2-2" qvwares_="3" secondgroupname_="Размер" secondgroupcode_="10" secondgroupsubcode_="38" secondgroupsubname_="L (50)" groupcode_="2">
                                       <label for="c1-2-2"></label>
                                       <span class="txt">L (50)</span>
                                     </li>
                                     <li>
-                                      <input type="checkbox" id="c1-2-3" >
+                                      <input type="checkbox" id="c1-2-3" qvwares_="3" secondgroupname_="Размер" secondgroupcode_="10" secondgroupsubcode_="40" secondgroupsubname_="XL (52)" groupcode_="2">
                                       <label for="c1-2-3"></label>
                                       <span class="txt">XL (52)</span>
                                     </li>
                                     <li>
-                                      <input type="checkbox" id="c1-2-4" >
+                                      <input type="checkbox" id="c1-2-4" qvwares_="3" secondgroupname_="Размер" secondgroupcode_="10" secondgroupsubcode_="41" secondgroupsubname_="XXL (54)" groupcode_="2" >
                                       <label for="c1-2-4"></label>
                                       <span class="txt">XXL (54)</span>
                                     </li>
                                   </ul>
                                 </li>
-                                <li class="">
+                                <li class="" >
                                   <span class="category-name" id="c1-3" >Сезон</span>
                                   <ul class="sub-list">
                                     <li>
@@ -1210,11 +1201,6 @@
                                       <input type="checkbox" id="c1-3-2" qvwares_="3" secondgroupname_="Сезон" secondgroupcode_="11" secondgroupsubcode_="39" secondgroupsubname_="Осень/Весна" groupcode_="2">
                                       <label for="c1-3-2"></label>
                                       <span class="txt">Осень/Весна</span>
-                                    </li>
-                                    <li>
-                                      <input type="checkbox" id="c1-3-3" >
-                                      <label for="c1-3-3"></label>
-                                      <span class="txt">Зима</span>
                                     </li>
                                   </ul>
                                 </li>
@@ -1414,9 +1400,9 @@
                       </a>
                     </div>
                   </li>
-                  <li id="430738" class="item" _val="3">
+                  <li id="430738" class="item" _val="3"  attrgroup_="2" attrnextlevel_="3" codeattr_=",42,3,3," codeval_=",9,10,11," >
                     <img class="image" src="./images/gift/430738.jpg">
-                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                    <div class="title">ПЕРЧАТКИ АВТОМАСТЕРА С ЛОГОТИПОМ MEYLE</div>
                     <div class="description">
                       <span class="unit">3 unit</span>
                       <input warecode_="430738" class="quantity-input" type="text" value="">
@@ -1440,11 +1426,11 @@
                       </a>
                     </div>
                   </li>
-                  <li id="430738" class="item" _val="3">
+                  <li id="430738" class="item" _val="350">
                     <img class="image" src="./images/gift/430738.jpg">
-                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1.1КГ</div>
+                    <div class="title">ЖИДКОЕ МЫЛО "SOLO SOFT", 1000КГ</div>
                     <div class="description">
-                      <span class="unit">3 unit</span>
+                      <span class="unit">350 unit</span>
                       <input warecode_="430738" class="quantity-input" type="text" value="">
                       <a href="" class="btn">
                         <!-- border color change class : red , green , yellow -->
@@ -1562,7 +1548,7 @@
           </div>
         </section>
 
-
+        <section class="right-sidebar hide"></section>
 
         <!-- footer -->
         <footer class="main-footer">
@@ -1585,26 +1571,30 @@
                 </div>
                 <div class="promotion num-2">
                   <div class="media">
-                    <div class="media-left media-middle">
-                      <a href="#">
+                    <div class="media-left">
+                      <a href="#" class="image-wrap">
                         <img src="./images/footer-img-2.jpg" alt="footer img">
                       </a>
                     </div>
                     <div class="media-body">
-                      <p>Длинные названия Товары Motul 76 ед.</p>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
                       <p>ВЕТА</p>
                     </div>
                   </div>
                 </div>
-                <div class="promotion num-3">
+                <div class="promotion num-3 gift-img">
                   <div class="media">
-                    <div class="media-left media-middle">
-                      <a href="#">
-                        <img src="./images/footer-img-3.jpg" alt="footer img">
+                    <div class="media-left">
+                      <a href="#" class="image-wrap">
+                        <img src="./images/gift/430738.jpg" alt="footer img">
                       </a>
                     </div>
                     <div class="media-body">
-                      <p>Длинные названия Товары Motul 76 ед.</p>
+                      <p >
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
                       <p>ВЕТА</p>
                       <p class="unit">160 unit</p>
                     </div>

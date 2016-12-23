@@ -74,6 +74,22 @@ $( function() {
       alwaysShowScrollbar: 1
     });
 
+    $("#order-table-body-wrap, #search-body").resizable({
+        handles: 'e, w, se',
+        // Remove height style
+        resize: function(event, ui) {
+            $(this).css("width", '');
+        }
+    });
+
+    $("#search-tree-container").resizable({
+      handles: 'e, w, se',
+      // Remove height style
+      resize: function(event, ui) {
+          $(this).css("height", '');
+      }
+    });
+
     $("#table-sort").selectmenu({
       change: function( event, ui ) {
         var selectVal = ui.item.value;
@@ -92,6 +108,33 @@ $( function() {
     $('#popup-calendar').on('click', popupСalendarHandler);
     // close popup
     $(document).on('keydown', closePopupHandler );
+    // cup off long text footer
+    $(".main-footer .promotion .media-body p").each(function() {
+        var $this = $(this);
+        var maxLength = 70;
+
+        if($this.closest('div.gift-img').length) {
+          maxLength = 50;
+        }
+
+        var text = $this.text();
+        if (text.length > maxLength) {
+            $this.prop('title', text);
+            $this.text(text.substr(0, maxLength) + "...");
+        }
+    });
+
+    // cup off long text gift title
+    $(".gift .gift-body .items .item .title").each(function() {
+        var $this = $(this);
+        var maxLength = 80;
+        var text = $this.text();
+        if (text.length > maxLength) {
+            $this.prop('title', text);
+            $this.text(text.substr(0, maxLength) + "...");
+        }
+    });
+
 
     // only for test
       $('.main-header').on('click', function (event) {
@@ -99,22 +142,38 @@ $( function() {
         var sectionAll = $('.main-content section');
 
         if(target.hasClass('magnifier')) {
-          sectionAll.addClass('hide');
-          $('.order').removeClass('hide');
-          $('.search-result').removeClass('hide');
+            sectionAll.addClass('hide');
+            $('.order').removeClass('hide');
+            $('.search-result').removeClass('hide');
+            $('.order').removeClass('right-bar');
         }
 
         if(target.hasClass('info')) {
-          sectionAll.addClass('hide');
-          $('.info').removeClass('hide');
+            sectionAll.addClass('hide');
+            $('.info').removeClass('hide');
+            $('.order').removeClass('right-bar');
 
         }
 
         if(target.hasClass('gifts')) {
-          sectionAll.addClass('hide');
+            sectionAll.addClass('hide');
 
-          $('.order').removeClass('hide').addClass('unit');
-          $('.gift').removeClass('hide');
+            $('.order')
+                .removeClass('hide')
+                .addClass('unit');
+            $('.order').removeClass('right-bar');
+            $('.gift').removeClass('hide');
+
+        }
+
+        if(target.hasClass('chart')) {
+            sectionAll.addClass('hide');
+
+            $('.order')
+                .removeClass('hide')
+                .removeClass('unit')
+                .addClass('right-bar');
+            $('.right-sidebar').removeClass('hide');
         }
 
 
