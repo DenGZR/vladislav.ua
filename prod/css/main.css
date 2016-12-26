@@ -159,7 +159,6 @@ button:focus {
 }
 label {
   display: inline-block;
-  width: 5em;
 }
 input[type="text"]:focus {
   outline: none;
@@ -2384,6 +2383,43 @@ a.ui-button:active,
   list-style-type: decimal;
   color: #000000;
   margin-top: 10px;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="radio"] {
+  display: none;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="checkbox"] + label,
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="radio"] + label {
+  cursor: pointer;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="checkbox"] + label::before,
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="radio"] + label::before {
+  content: "";
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  margin: 0 10px 0 0;
+  background-image: url(../images/radio-btn.png);
+  background-repeat: no-repeat;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="radio"] + label::before {
+  background-position: 0px 0px;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="radio"]:checked + label::before {
+  background-position: -14px 0px;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="radio"]:disabled + label::before {
+  background-position: 0px 0px;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn input[type="radio"]:checked:disabled + label::before {
+  background-position: 0px 0px;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn > li {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.info .info-container .info-body #info-tabs-1 .radio-btn > li:first-child {
+  margin-left: 0px;
 }
 .popup-calendar {
   position: absolute;

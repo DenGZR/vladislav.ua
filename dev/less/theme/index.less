@@ -146,3 +146,40 @@
   // }
 
 }
+
+
+.custom-radio-btn( ) {
+
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    cursor: pointer;
+  }
+  input[type="checkbox"] + label::before,
+  input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin: 0 10px 0 0;
+    background-image: url(../images/radio-btn.png);
+    background-repeat: no-repeat;
+  }
+
+  input[type="radio"] + label::before {
+    background-position: 0px 0px;
+  }
+
+  input[type="radio"]:checked + label::before {
+    background-position: -14px 0px;
+  }
+
+  input[type="radio"]:disabled + label::before {
+    background-position: 0px 0px;
+  }
+  input[type="radio"]:checked:disabled + label::before {
+    background-position: 0px 0px;
+  }
+}

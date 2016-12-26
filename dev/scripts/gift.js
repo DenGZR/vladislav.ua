@@ -310,7 +310,7 @@ $( function() {
 
       function byRange(min, max) {
         var currentCost, self;
-        console.log('byRange', min, max);
+        // console.log('byRange', min, max);
 
         $.each( items, function(){
           self = $(this);
@@ -323,7 +323,7 @@ $( function() {
       function isRange(item, min, max) {
 
         var itemCost = item.attr('_val');
-        console.log('itemCost', min, max, itemCost );
+        // console.log('itemCost', min, max, itemCost );
 
         if( min <= itemCost && itemCost <= max ) {
           item.removeClass('hide');
